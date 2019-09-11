@@ -1,0 +1,30 @@
+{
+    "Configuration" : "Debug",
+    "SelfDestructTimer": "2h",
+    "AppServicePlan": "-svcplan",
+    "AppInsightsSuffix":"-appinsights",
+    "ResourceGroupSuffix": "-rg",
+    "KeyVaultSuffix":"-kv",
+    "ResourceLocation":"eastus",
+    "FunctionAppFolder":"../../OfficeDev.Functions", 
+    "PublishZip":"dist/OfficeDev.Functions.zip",
+    "FunctionAppSuffix":"-funcapp",
+    "FunctionAppRoles":"funcAppRoles.json",
+    "FunctionRequiredResources":"funcAppRequiredResourceManifest.json",
+    "FlowAppSuffix": "-flowapp",
+    "StorageSuffix":"storage",
+    "ProgramRequestQueue": "program-requests",
+    "SharePointTenantName":"https://contoso-admin.sharepoint.com",
+    "SharePointCorsDomain":"https://contoso.sharepoint.com",
+    "SharePointAdminAccount":"admin@contoso.com",
+    "SharePointAdminPassword":"some password",
+    "AutomationAccountSuffix": "-automation",
+    "ProvisioningAttempts": 5,
+    "PnPProvisioningTemplateUrl": "https://contoso.sharepoint.com/SiteAssets/sitetemplate.xml",
+    "ProgramRunbookName": "PnP-Program-Template-Runbook",
+    "ProgramRunbookFilePath":"runbook-pnp-sample.ps1",
+    "ProgramWebhookName": "ProgramRequestWebhook"
+}
+
+
+

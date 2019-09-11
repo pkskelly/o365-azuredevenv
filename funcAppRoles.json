@@ -1,0 +1,20 @@
+[
+    {
+        "allowedMemberTypes": [
+            "User"
+        ],
+        "description": "Approvers can mark documents as approved",
+        "displayName": "Approver",
+        "isEnabled": "true",
+        "value": "approver"
+    },
+    {
+        "allowedMemberTypes": [
+            "User"
+        ],
+        "description": "Requestors can create  requests",
+        "displayName": "Requestor",
+        "isEnabled": "true",
+        "value": "requestor"
+    }
+]
