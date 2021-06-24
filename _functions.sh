@@ -101,12 +101,12 @@ checkPrerequisites() {
     fi;
     logSuccess '\u2713'
 
-    logMsg 'Checking for Office 365 CLI...'
-      _=$(command -v o365);
+    logMsg 'Checking for CLI for Microsoft 365...'
+      _=$(command -v m365);
       if [ "$?" != "0" ]; then
         logError 'ERROR \u274c\n'
         logError
-        logError "You don't seem to have the Office 365 CLI installed."
+        logError "You don't seem to have the CLI for Microsoft 365 installed."
         logError "See https://pnp.github.io/office365-cli/ for installation and usage."
         exit 1
       fi;

@@ -71,7 +71,7 @@ deleteO365Groups() {
       #Get all of the groups to remove using cli to create tmp file with the groups
       #BUG in VorpalJS used by the Office 365 CLI does not like a pure piping of large 
       #    result sets
-      o365 aad o365group list --output json > groups.tmp 
+      m365 aad o365group list --output json > groups.tmp 
       
       #Get the groups from file created by the CLI call
       groupIds=$(cat groups.tmp | jq -r '.[] | select(.displayName | contains("'"$1"'")) | .id')
@@ -81,19 +81,19 @@ deleteO365Groups() {
 
       for groupId in $groupIds; do
           logMsg "Removing group $groupId ..."
-          o365 aad o365group remove --id $groupId --confirm
+          m365 aad o365group remove --id $groupId --confirm
           logSuccess "DONE"
       done
 }
 
 #output current connnection 
-loggedIn=$(o365 status) 
+loggedIn=$(m365 status) 
 if [ "$loggedIn" == "Logged out" ]; then
     logError "You must login to Office 365 CLI!"
     exit
 fi
 
-loggedIn=$(o365 status --output json | jq -r '.connectedAs')
+loggedIn=$(m365 status --output json | jq -r '.connectedAs')
 if [ $CONFIRM ]; then  
   logMsg "Logged into Office 365 CLI as ${loggedIn}. Continue using this connection? (y/n)?"
   read answer
